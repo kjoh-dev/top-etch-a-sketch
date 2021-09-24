@@ -1,7 +1,5 @@
 const gridContainer = document.querySelector(".grid-container");
 const createGridButton = document.querySelector("input[type='button']");
-// const gridWidthText = document.querySelector("input[type='text']");
-
 
 
 createGridButton.addEventListener("click", createGrid);
@@ -44,8 +42,6 @@ function createGrid(e){
         for (let j = gridSize; j > 0; j--) {
             for (let i = gridSize; i > 0; i--) {
                 const cell = document.createElement("div");
-                // const cellNumber = (gridWidth+1-i) + (gridWidth-j)*gridWidth;
-                // cell.textContent = +cellNumber;
                 cell.style.color = "red";
                 cell.style.border = "1px solid black";
                 cell.addEventListener("mouseover", colorCell);
