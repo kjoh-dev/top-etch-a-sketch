@@ -1,6 +1,5 @@
 //HTML References
 const gridContainer = document.querySelector(".grid-container");
-// const createGridButton = document.querySelector("#create");
 const inputElems = document.querySelectorAll("input");
 
 //Paint Mode:
@@ -33,7 +32,9 @@ function initializeInputElems(){
         if(!(inputElem instanceof HTMLElement)) return;
     
         if(inputElem.type === "number"){
-            inputElem.defaultValue = 16;
+            gridSize = 16;
+            inputElem.parentElement.firstElementChild.textContent = gridSize;
+            inputElem.value = gridSize;
             inputElem.max = 100;
             inputElem.min = 1;
             inputElem.addEventListener("change", function(){
@@ -42,6 +43,7 @@ function initializeInputElems(){
                     return;
                 }
                 gridSize = Number(inputElem.value);
+                inputElem.parentElement.firstElementChild.textContent = gridSize;
             });
         }
     
