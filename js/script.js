@@ -56,10 +56,12 @@ function initializeInputElems(){
             switch(id){
                 case "create":
                     inputElem.addEventListener("click", createGrid);
+                    createGrid(inputElem);
                     break;
                 case "single":
                     inputElem.addEventListener("click", function(){colorMode = SINGLE})
                     inputElem.addEventListener("click", applyButtonsToggleStyles)
+                    applyButtonsToggleStyles(inputElem);
                     break;
                 case "random":
                     inputElem.addEventListener("click", function(){colorMode = RANDOM})
@@ -68,6 +70,7 @@ function initializeInputElems(){
                 case "solid":
                     inputElem.addEventListener("click", function(){paintMode = SOLID})
                     inputElem.addEventListener("click", applyButtonsToggleStyles)
+                    applyButtonsToggleStyles(inputElem);
                     break;
                 case "darken":
                     inputElem.addEventListener("click", function(){paintMode = DARKEN})
@@ -86,7 +89,13 @@ function initializeInputElems(){
 }
 
 function applyButtonsToggleStyles(e){
-    button = e.target;
+    let button;
+    if(e instanceof HTMLElement) {
+        button = e;
+    } else {
+        button = e.target;
+    }
+
     if(!(button instanceof HTMLElement)) return;
 
     switch(button.id){
@@ -232,8 +241,13 @@ function clearGrid(){
 }
 
 function createGrid(e){
+    let createGridButton;
+    if(e instanceof HTMLElement) {
+        createGridButton = e;
+    } else {
+        createGridButton = e.target;
+    }
 
-    const createGridButton = e.target;
     if(!(createGridButton instanceof HTMLElement) && createGridButton.id === "create") return;
 
     if(gridSize > 100 || gridSize < 2) {
