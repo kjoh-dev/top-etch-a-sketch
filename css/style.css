@@ -2,12 +2,6 @@ body {
     background-color: rgb(200, 200, 200);
 }
 
-h1 {
-    text-decoration: underline black double;
-    padding-left: 24px;
-
-}
-
 main {
     display: flex;
     flex-direction: row;
@@ -17,6 +11,7 @@ main {
     border: 3px dotted red;
 }
 
+/* Menu Inputs/Buttons */
 form{
     width: 172px;
     position: fixed;
@@ -69,21 +64,101 @@ label{
     border: 2px solid red;
 
 }
-
 #size{
     font-size: 16px;
     width: 56px;
 }
 
+/* Grid Area */
 .grid-container {
+    /* z-index: 10; */
     width: 480px;
     height: 480px;
-    margin-left: 180px;
+    background-color: darkgrey;
+    padding: 12px;
+    border-top: 10px ridge rgb(182, 0, 0);
+    border-right: 10px solid rgb(182, 0, 0);
+    border-bottom: 10px solid rgb(182, 0, 0);
+    border-left: 10px ridge rgb(182, 0, 0);
+    border-radius: 48px;
 
-    display: none;
-    border: 3px double black;
+    display: block;
 
 }
 .cell{
     filter: brightness(100%);
+}
+
+
+/* Frame, sreen and dials */
+h1 {
+    position: absolute;
+    top: 1%;
+    margin: 0px;
+    text-align: center;
+
+    font-family: "Ephesis", cursive;
+    letter-spacing: 4px;
+    font-size: 40px;
+    color: goldenrod;
+    text-shadow: 2px 2px 2px rgb(58, 44, 9);
+}
+.frame-outer{
+    position: relative;
+
+    width: 480px;
+    height: 480px;
+    padding: 100px 80px 120px 80px;
+    margin: auto;
+
+    background-color: rgb(182, 0, 0);
+
+    border-top: 15px solid rgb(182, 0, 0);
+    border-right: 15px ridge rgb(182, 0, 0);
+    border-bottom: 15px ridge rgb(182, 0, 0);
+    border-left: 15px solid rgb(182, 0, 0);    
+    border-radius: 6px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.screen{
+    /* z-index: 1; */
+    width: 480px;
+    height: 480px;
+    background-color: darkgrey;
+    border: 3px transparent rgb(182, 0, 0);
+    border-radius: 48px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.frame-inner{
+    /* z-index: 0; */
+    width: 480px;
+    height: 480px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+
+}
+.left-dial, .right-dial{
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    bottom: 1%;
+    background-color: lightgray;
+    border-radius: 50%;
+    border-bottom: 3px gray;
+    border-right: 3px gray;
+    box-shadow: 10px 10px 10px rgb(51, 0, 0);
+}
+.left-dial{
+    left: 1%;
+}
+.right-dial{
+    right: 1%;
 }

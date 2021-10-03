@@ -2,13 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css2?family=Ephesis&display=swap" rel="stylesheet"> 
     <link rel="stylesheet" href="css/style.css">
     <script src="js/script.js" defer></script> 
     <title>Etch-A-Sketch</title>
 </head>
 <body>
     <header>
-        <h1>ETCH-A-SKETCH</h1>
+        <!-- <h1>ETCH-A-SKETCH</h1> -->
     </header>
     <main>
         <form>
@@ -34,7 +35,23 @@
                 <input id="lighten" type="button" name="lighten" value="LIGHTEN">
             </div>
         </form>
-        <div class="grid-container"></div>
+        <div class="frame-outer">
+            <h1>Etch A Sketch</h1>
+            <div class="left-dial"></div>
+            <div class="right-dial"></div>
+            <div class="screen">
+                <div class="frame-inner">
+                    <div class="grid-container"></div>
+                </div>
+            </div>
+        </div>
     </main>
+    <!-- <div class="frame-outer">
+        <div class="screen">
+            <div class="frame-inner">
+
+            </div>
+        </div>
+    </div> -->
 </body>
 </html>

@@ -25,6 +25,7 @@ initializeInputElems();
 
 
 
+
 //Function Definitions
 function initializeInputElems(){
     for (let i = 0; i < inputElems.length; i++) {
@@ -37,7 +38,7 @@ function initializeInputElems(){
             inputElem.value = gridSize;
             inputElem.max = 100;
             inputElem.min = 1;
-            inputElem.addEventListener("change", function(){
+            inputElem.addEventListener("input", function(){
                 if(isNaN(Number(inputElem.value))) {
                     alert("Please input an integer value from 1 to 100");
                     return;
