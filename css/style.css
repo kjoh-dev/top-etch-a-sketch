@@ -1,5 +1,11 @@
 body {
     background-color: rgb(200, 200, 200);
+    color: goldenrod;
+    text-shadow: 
+    -1px -1px 0px rgb(58, 44, 9),
+    1px -1px 0px rgb(58, 44, 9),
+    -1px 1px 0px rgb(58, 44, 9),
+    1px 1px 0px rgb(58, 44, 9);
 }
 
 main {
@@ -8,30 +14,39 @@ main {
     justify-content: start;
     align-items: flex-start;
     gap: 26px;
-    border: 3px dotted red;
 }
 
 /* Menu Inputs/Buttons */
 form{
-    width: 172px;
-    position: fixed;
-    top: 85px;
-    left: -144px;
-    transition-property: left;
-    transition-duration: 0.25s;
-    transition-timing-function: ease-out;
+    width: 460px;
+    position: absolute;
+    bottom: 0%;
 
     display: flex;
-    flex-direction: column;
-    justify-content: start;
-    align-items: flex-end;
-    gap: 24px;
-
-    border: 2px solid green;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: stretch;
+    gap: 4px;
 
 }
-form:hover{
-    left: 0px;
+
+input[type="button"]{
+    color: rgb(51, 0, 0);
+
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(219, 219, 219);
+    box-shadow: 2px 3px rgb(51, 0, 0);
+}
+input[type="button"]:active{
+    background-color: rgb(156, 156, 156);
+    box-shadow: 0px 1px rgb(51, 0, 0);
+    transform: translateY(3px);
+}
+.toggled{
+    background-color: rgb(156, 156, 156) !important;
+    box-shadow: 0px 1px rgb(51, 0, 0) !important;
+    transform: translateY(3px);
 }
 
 h2{
@@ -47,23 +62,50 @@ label{
     font-size: 16px;
 
     display: flex;
-    justify-content: end;
+    justify-content: center;
     align-items: center;
-    border: 2px solid pink;
 }
 
 .grid,.color,.shade{
-    width: 136px;
+    width: 144px;
+    height: auto;
+    flex: 1 1 0;
 
     display: flex;
     flex-direction: column;
-    justify-content: start;
+    justify-content: space-between;
     align-items: stretch;
     gap: 8px;
 
-    border: 2px solid red;
-
 }
+
+.color>div{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 2px;
+}
+#single, #random{
+    flex: 1 1 0;
+}
+
+.grid>label{
+    height: 32px;
+}
+
+.shade>div{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 2px;
+}
+#solid{
+    height: 32px;
+}
+#darken, #lighten{
+    flex: 1 1 0;
+}
+
 #size{
     font-size: 16px;
     width: 56px;
@@ -71,7 +113,6 @@ label{
 
 /* Grid Area */
 .grid-container {
-    /* z-index: 10; */
     width: 480px;
     height: 480px;
     background-color: darkgrey;
@@ -87,13 +128,15 @@ label{
 }
 .cell{
     filter: brightness(100%);
+    border: 1px dotted gray;
 }
 
 
 /* Frame, sreen and dials */
 h1 {
     position: absolute;
-    top: 1%;
+    top: 0%;
+    padding: 0px;
     margin: 0px;
     text-align: center;
 
@@ -102,6 +145,16 @@ h1 {
     font-size: 40px;
     color: goldenrod;
     text-shadow: 2px 2px 2px rgb(58, 44, 9);
+}
+h1>a{
+    position: absolute;
+    text-align: center;
+    left: 35%;
+    bottom: -50%;
+
+    font-size: 22px;
+    text-decoration: none;
+    color:goldenrod;
 }
 .frame-outer{
     position: relative;
@@ -157,8 +210,8 @@ h1 {
     box-shadow: 10px 10px 10px rgb(51, 0, 0);
 }
 .left-dial{
-    left: 1%;
+    left: 0.5%;
 }
 .right-dial{
-    right: 1%;
+    right: 0.5%;
 }

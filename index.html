@@ -8,35 +8,11 @@
     <title>Etch-A-Sketch</title>
 </head>
 <body>
-    <header>
-        <!-- <h1>ETCH-A-SKETCH</h1> -->
-    </header>
     <main>
-        <form>
-            <div class="grid">
-                <h2>GRID SIZE</h2>
-                <label for="size">
-                    <span>100</span>
-                    <span>&nbsp;X&nbsp;</span>
-                    <input id="size" type="number" name="grid-size" value="" placeholder="100">
-                </label>
-                <input id="create" type="button" name="create-grid" value="CREATE">
-            </div>
-            <div class="color">
-                <h2>COLOR MODE</h2>
-                <label for="size">PICK :&nbsp;</span><input id="picker" type="color" name="pick-color" value="#000000"></label>
-                <input id="single" type="button" name="single-color" value="SINGLE">
-                <input id="random" type="button" name="random-color" value="RANDOM">
-            </div>
-            <div class="shade">
-                <h2>PAINT MODE</h2>
-                <input id="solid" type="button" name="solid" value="SOLID">
-                <input id="darken" type="button" name="darken" value="DARKEN">
-                <input id="lighten" type="button" name="lighten" value="LIGHTEN">
-            </div>
-        </form>
         <div class="frame-outer">
-            <h1>Etch A Sketch</h1>
+            <h1>Etch A Sketch
+                <br><a href="https://github.com/kjoh-dev" target="_blank">by kjoh</a>
+            </h1>
             <div class="left-dial"></div>
             <div class="right-dial"></div>
             <div class="screen">
@@ -44,14 +20,34 @@
                     <div class="grid-container"></div>
                 </div>
             </div>
+            <form>
+                <div class="color">
+                    <h2>COLOR MODE</h2>
+                    <label for="size">PICK :&nbsp;</span><input id="picker" type="color" name="pick-color" value="#000000"></label>
+                    <div>
+                        <input id="single" type="button" name="single-color" value="SINGLE">
+                        <input id="random" type="button" name="random-color" value="RANDOM">
+                    </div>
+                </div>
+                <div class="grid">
+                    <h2>GRID SIZE</h2>
+                    <label for="size">
+                        <span>100</span>
+                        <span>&nbsp;X&nbsp;</span>
+                        <input id="size" type="number" name="grid-size" value="" placeholder="100">
+                    </label>
+                    <input id="create" type="button" name="create-grid" value="CREATE">
+                </div>
+                <div class="shade">
+                    <h2>PAINT MODE</h2>
+                    <input id="solid" type="button" name="solid" value="SOLID">
+                    <div>
+                        <input id="darken" type="button" name="darken" value="DARKEN">
+                        <input id="lighten" type="button" name="lighten" value="LIGHTEN">
+                    </div>
+                </div>
+            </form>
         </div>
     </main>
-    <!-- <div class="frame-outer">
-        <div class="screen">
-            <div class="frame-inner">
-
-            </div>
-        </div>
-    </div> -->
 </body>
 </html>

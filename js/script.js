@@ -11,8 +11,6 @@ const LIGHTEN = "lighten";
 const SINGLE = "single";
 const RANDOM = "random";
 
-//Brush Thickness?
-
 //Variable Declarations/Initializations
 let gridSize = 16;
 let colorMode = SINGLE;
@@ -61,18 +59,23 @@ function initializeInputElems(){
                     break;
                 case "single":
                     inputElem.addEventListener("click", function(){colorMode = SINGLE})
+                    inputElem.addEventListener("click", applyButtonsToggleStyles)
                     break;
                 case "random":
                     inputElem.addEventListener("click", function(){colorMode = RANDOM})
+                    inputElem.addEventListener("click", applyButtonsToggleStyles)
                     break;
                 case "solid":
                     inputElem.addEventListener("click", function(){paintMode = SOLID})
+                    inputElem.addEventListener("click", applyButtonsToggleStyles)
                     break;
                 case "darken":
                     inputElem.addEventListener("click", function(){paintMode = DARKEN})
+                    inputElem.addEventListener("click", applyButtonsToggleStyles)
                     break;
                 case "lighten":
                     inputElem.addEventListener("click", function(){paintMode = LIGHTEN})
+                    inputElem.addEventListener("click", applyButtonsToggleStyles)
                     break;
                 default:
                     console.log(`Error in initializations - invalid id: ${id}`);
@@ -81,6 +84,41 @@ function initializeInputElems(){
         }
     }
 }
+
+function applyButtonsToggleStyles(e){
+    button = e.target;
+    if(!(button instanceof HTMLElement)) return;
+
+    switch(button.id){
+        case "single":
+            button.classList.add("toggled");
+            document.querySelector("#random").classList.remove("toggled");
+            break;
+        case "random":
+            button.classList.add("toggled");
+            document.querySelector("#single").classList.remove("toggled");
+            break;
+        case "solid":
+            button.classList.add("toggled");
+            document.querySelector("#darken").classList.remove("toggled");
+            document.querySelector("#lighten").classList.remove("toggled");
+            break;
+        case "darken":
+            button.classList.add("toggled");
+            document.querySelector("#solid").classList.remove("toggled");
+            document.querySelector("#lighten").classList.remove("toggled");
+            break;
+        case "lighten":
+            button.classList.add("toggled");
+            document.querySelector("#solid").classList.remove("toggled");
+            document.querySelector("#darken").classList.remove("toggled");
+            break;
+        default:
+            console.log(`Error in applyButtonsToggleStyles - invalid id: ${id}`);
+            break;
+    }
+}
+
 
 function getFilterValue(htmlElement, filterName){
     if(!(htmlElement instanceof HTMLElement)) return;
@@ -208,7 +246,6 @@ function createGrid(e){
     for (let j = gridSize; j > 0; j--) {
         for (let i = gridSize; i > 0; i--) {
             const cell = document.createElement("div");
-            cell.style.border = "1px solid gray";
             cell.classList.add("cell");
             cell.addEventListener("mouseenter", paintCell);
             gridContainer.appendChild(cell);
